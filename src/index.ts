@@ -1,17 +1,11 @@
 import { BaseQueue } from "./queue-service/base-queue";
 import { InMemoryQueue } from "./queue-service/inmemory-queue";
+import { QueueManager } from "./queue-service/queue-manager";
 
-console.log("hello world");
-
-const queue:BaseQueue = new InMemoryQueue({name:'test'});
+const queue:QueueManager = new QueueManager({name:'test'});
 
 for(let i=0;i<10;i++){
    queue.add(i);
 
 }
 
-for(let i=0;i<10;i++){
-    console.log(queue.remove());
-}
-
-console.log(queue);
